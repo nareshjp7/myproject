@@ -1,0 +1,4 @@
+---
+# handlers file for babu.mysql
+- name: start mysql
+  service: name=mysqld state=restarted

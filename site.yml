@@ -1,0 +1,8 @@
+---
+- name: install tomcat role
+  hosts: all
+  become: yes
+  remote_user: babu
+  roles:
+     - babu.tomcat
+     - babu.mysql

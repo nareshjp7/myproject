@@ -1,0 +1,4 @@
+---
+# tasks file for babu.tomcat
+- include: java.yml
+- include: tomcat.yml

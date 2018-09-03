@@ -1,0 +1,10 @@
+---
+- name: Copy a sample script to a remote server
+  copy: src=script.sh dest=/tmp mode=0777
+       
+- name: Run installation and verification script
+  command: bash /tmp/script.sh 
+  register: result
+
+- name: Show result
+  debug: msg="{{ result.stdout }}"
