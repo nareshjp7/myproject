@@ -3,15 +3,15 @@
 - name: remove the older version of the tomcat
   file: path=/usr/local/tomcat state=absent
 - name: download the tomcat
-  get_url: url="http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz" dest=/tmp
+  get_url: url="http://mirrors.fibergrid.in/apache/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz" dest=/tmp
 - name: create the mkdir
   command: mkdir /usr/local/tomcat
 - name: extract archive
-  unarchive: src=/tmp/apache-tomcat-8.5.32.tar.gz dest=/usr/local/tomcat copy=no
+  unarchive: src=/tmp/apache-tomcat-8.5.33.tar.gz dest=/usr/local/tomcat copy=no
 - name: tomcat user 
-  copy: src=tomcat-users.xml dest=/usr/local/tomcat/apache-tomcat-8.5.32/conf/ 
+  copy: src=tomcat-users.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/conf/ 
 - name: tomcat met file allow
-  copy: src=context.xml dest=/usr/local/tomcat/apache-tomcat-8.5.32/webapps/manager/META-INF/
+  copy: src=context.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps/manager/META-INF/
 - name: copy the war file 
-  copy: src="{{job}}" dest=/usr/local/tomcat/apache-tomcat-8.5.32/webapps mode=0755 owner=babu force=yes
+  copy: src="{{job}}" dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps mode=0755 owner=babu force=yes
   notify: restart tomcat
