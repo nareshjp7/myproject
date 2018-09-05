@@ -1,0 +1,19 @@
+---
+   - name: set the java home
+     lineinfile: dest=~/.bashrc regexp='<JAVA_HOME>'
+              line="export JAVA_HOME=/usr/local/java/jdk1.8.0_131"
+             
+   - name: set the java path
+     lineinfile: dest=~/.bashrc regexp='<JAVA_HOME>'
+                line='export PATH="$PATH:$JAVA_HOME/bin"'
+     - name: set the CATALINA home
+     lineinfile: dest=~/.bashrc regexp='<CATALINA_HOME>'
+              line=export CATALINA_HOME=/usr/local/tomcat/apache-tomcat-8.5.33" 
+             
+   - name: set the catalina path
+     lineinfile: dest=~/.bashrc regexp='<CATALINA_HOME>'
+                line='"export PATH=$PATH:$CATALINA_HOME/bin"'
+                
+   - name: source bashrc
+     shell: source ~/.bashrc
+     notify: restart tomcat  
