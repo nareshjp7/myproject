@@ -20,5 +20,12 @@
   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 -->
+      <Resource
+        name="jdbc/tourguide" type="javax.sql.DataSource"
+        maxActive="100" maxIdle="30" maxWait="10000" 
+        url="jdbc:mysql://18.206.124.143:3306/tourguide"
+        driverClassName="com.mysql.jdbc.Driver"
+        username="babu" password="babu@7646"
+    />
   <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
 </Context>
