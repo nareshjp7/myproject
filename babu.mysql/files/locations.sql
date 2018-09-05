@@ -20,6 +20,8 @@ CREATE TABLE `userdetails` (
   PRIMARY KEY (`id`)
 ); 
  
+INSERT INTO `userdetails` (`id`,`firstName`,`lastName`,`emailAddress`,`password`,`mobile`) VALUES (1,'GMK','Babu','babu.g@gmail.com','babu@7646',987654321);
+
 INSERT INTO `locations` (`id`,`name`,`address`,`lat`,`lng`,`city`) VALUES (1,'Charminar','Charminar, Hyderabad, Telangana, India',17.361431,78.474533,'Hyderabad');
 INSERT INTO `locations` (`id`,`name`,`address`,`lat`,`lng`,`city`) VALUES (2,'Golkonda','Golconda Fort, Hyderabad, Telangana, India',17.382330,78.401604,'Hyderabad');
 INSERT INTO `locations` (`id`,`name`,`address`,`lat`,`lng`,`city`) VALUES (3,'Hussain Sagar','Hussain Sagar, Hyderabad, Telangana',17.423880,78.473824,'Hyderabad');
