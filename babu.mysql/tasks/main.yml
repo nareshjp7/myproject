@@ -25,4 +25,10 @@
   mysql_db: name="{{ db_name }}" state=present
 - name: create user
   mysql_user: name="{{ db_user_name }}" password="{{ db_user_pass }}" priv=*.*:ALL host="{{ db_host }}" state=present
-   
+- name: copy the sql file
+  copy: src=locations.sql dest=/tmp mode=0644
+- name: Import DB
+  mysql_db: name=tourguide target=/tmp/locations.sql state=import
+- name: Start MySQL Server and enable it
+  service: name=mysqld state=started enabled=yes
+ 
