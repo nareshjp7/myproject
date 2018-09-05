@@ -17,6 +17,7 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk
 echo "update javaws"
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jdk1.8.0_131/bin/javaws" 1
 echo "update java paths"
-echo "#JAVA HOME directory setup" > ~/.bashrc
-echo "export JAVA_HOME=/usr/local/java/jdk1.8.0_131" > ~/.bashrc
-echo "export PATH=$PATH:$JAVA_HOME/bin" > ~/.bashrc
+echo "#JAVA HOME directory setup" > /opt/env
+echo "export JAVA_HOME=/usr/local/java/jdk1.8.0_131" > /opt/env
+echo "export PATH=$PATH:$JAVA_HOME/bin" > /opt/env
+source /opt/env
