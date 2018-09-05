@@ -18,6 +18,9 @@
       - 127.0.0.1
       - ::1
       - localhost
+
+- name: store mysql root password
+  copy: src=mysql.cnf dest=/root/.my.cnf mode=0644
 - name: create database
   mysql_db: name="{{ db_name }}" state=present
 - name: create user
