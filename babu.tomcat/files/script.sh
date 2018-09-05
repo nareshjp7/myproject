@@ -9,15 +9,15 @@ echo "create java directory"
 sudo mkdir /usr/local/java
 echo "move to java packages when you create a directory"
 sudo mv jdk1.8.0_131/ /usr/local/java
-cd /usr/local/java/
+ 
 echo "update java"
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.8.0_131/bin/java" 1
 echo "update javac"
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk1.8.0_131/bin/javac" 1
 echo "update javaws"
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jdk1.8.0_131/bin/javaws" 1
-echo "update java paths"
-echo "#JAVA HOME directory setup" > /opt/env
-echo "export JAVA_HOME=/usr/local/java/jdk1.8.0_131" > /opt/env
-echo "export PATH=$PATH:$JAVA_HOME/bin" > /opt/env
-source /opt/env
+#echo "update java paths"
+#echo "#JAVA HOME directory setup" > /opt/env
+#echo "export JAVA_HOME=/usr/local/java/jdk1.8.0_131" > /opt/env
+#echo "export PATH=$PATH:$JAVA_HOME/bin" > /opt/env
+#source /opt/env
