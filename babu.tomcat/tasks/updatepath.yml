@@ -6,7 +6,7 @@
    - name: set the java path
      lineinfile: dest=~/.bashrc regexp='<JAVA_HOME>'
                 line='export PATH="$PATH:$JAVA_HOME/bin"'
-     - name: set the CATALINA home
+   - name: set the CATALINA home
      lineinfile: dest=~/.bashrc regexp='<CATALINA_HOME>'
               line=export CATALINA_HOME=/usr/local/tomcat/apache-tomcat-8.5.33" 
              
