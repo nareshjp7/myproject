@@ -13,7 +13,9 @@
 - name: tomcat met file allow
   copy: src=context.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps/manager/META-INF
 - name: tomcat web xml file
+- name: copy mysql jar
+  copy: src=mysql-connector-java-6.0.6.jar dest=/usr/local/tomcat/apache-tomcat-8.5.33/lib
   copy: src=web.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps/manager/WEB-INF/
-- name: copy the war file 
+- name: copy the war file
   copy: src="{{job}}" dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps mode=0755 owner=babu force=yes
   notify: restart tomcat
