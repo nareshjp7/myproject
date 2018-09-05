@@ -1,0 +1,15 @@
+[client]
+user=root
+password=password123
+
+[mysql]
+user=root
+password=password123
+
+[mysqldump]
+user=root
+password=password123
+
+[mysqldiff]
+user=root
+password=password123
