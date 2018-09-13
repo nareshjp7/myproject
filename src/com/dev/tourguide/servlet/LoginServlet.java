@@ -43,9 +43,9 @@ public class LoginServlet extends HttpServlet {
 		UserDetails details = new UserDao().login(request.getParameterValues("emailAddress")[0], request.getParameterValues("password")[0]);
 		request.setAttribute("data", details);
 		if(details== null) {
-			response.sendRedirect("/TourGuide/login.html");
+			response.sendRedirect("/TourGuide-1.5.1/login.html");
 		}else {
-			response.sendRedirect("/TourGuide/tourguide.html?id="+details.getId());
+			response.sendRedirect("/TourGuide-1.5.1/tourguide.html?id="+details.getId());
 		}
 	}
 }
