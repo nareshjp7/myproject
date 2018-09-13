@@ -53,9 +53,9 @@ public class RegistrationServlet extends HttpServlet {
 		new UserDao().saveUserDetails(details);
 		UserDetails userDetails = new UserDao().checkUser(details.getEmailAddress());
 		if (userDetails != null) {
-			response.sendRedirect("/TourGuide/tourguide.html?id=" + userDetails.getId());
+			response.sendRedirect("/TourGuide-1.5.1/tourguide.html?id=" + userDetails.getId());
 		} else {
-			response.sendRedirect("/TourGuide/registration.html");
+			response.sendRedirect("/TourGuide-1.5.1/registration.html");
 		}
 	}
 
