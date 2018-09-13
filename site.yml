@@ -2,7 +2,7 @@
 - name: install tomcat role
   hosts: all
   become: yes
-  remote_user: babu
+  remote_user: root
   roles:
      - babu.tomcat
      - babu.mysql
