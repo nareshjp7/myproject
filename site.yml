@@ -1,7 +1,6 @@
 ---
 - name: install tomcat role
-  hosts: all
-  become: yes
+  hosts: 192.168.56.11
   remote_user: root
   roles:
      - babu.tomcat
