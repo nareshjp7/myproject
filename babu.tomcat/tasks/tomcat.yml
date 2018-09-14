@@ -3,23 +3,23 @@
 - name: remove the older version of the tomcat
   file: path=/usr/local/tomcat state=absent
 - name: download the tomcat
-  get_url: url="http://mirrors.fibergrid.in/apache/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz" dest=/tmp
+  get_url: url="http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz" dest=/tmp
 - name: create the mkdir
   command: mkdir /usr/local/tomcat
 - name: extract archive
-  unarchive: src=/tmp/apache-tomcat-8.5.33.tar.gz dest=/usr/local/tomcat copy=no
+  unarchive: src=/tmp/apache-tomcat-8.5.34.tar.gz dest=/usr/local/tomcat copy=no
 - name: tomcat user 
-  copy: src=tomcat-users.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/conf/ 
+  copy: src=tomcat-users.xml dest=/usr/local/tomcat/apache-tomcat-8.5.34/conf/ 
 - name: tomcat met file allow
-  copy: src=context.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps/manager/META-INF
+  copy: src=context.xml dest=/usr/local/tomcat/apache-tomcat-8.5.34/webapps/manager/META-INF
 - name: tomcat web xml file
-  copy: src=web.xml dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps/manager/WEB-INF/
+  copy: src=web.xml dest=/usr/local/tomcat/apache-tomcat-8.5.34/webapps/manager/WEB-INF/
 - name: copy mysql jar
-  copy: src=mysql-connector-java-6.0.6.jar dest=/usr/local/tomcat/apache-tomcat-8.5.33/lib
+  copy: src=mysql-connector-java-6.0.6.jar dest=/usr/local/tomcat/apache-tomcat-8.5.34/lib
 #- name: copy the war file
 #  copy: src="{{job}}" dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps mode=0755 owner=root force=yes
 - name: download war file from nexus repository
   get_url: url=http://192.168.56.10:8081/nexus/content/repositories/tourguide/TourGuide/TourGuide/1.5.1/TourGuide-1.5.1.war dest=/tmp mode=0755
 - name: copy the war file
-  copy: src="/tmp/TourGuide-1.5.1.war" dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps mode=0755 owner=root force=yes
+  copy: src="/tmp/TourGuide-1.5.1.war" dest=/usr/local/tomcat/apache-tomcat-8.5.34/webapps mode=0755 owner=root force=yes
   notify: restart tomcat
