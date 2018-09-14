@@ -1,4 +1,4 @@
 ---
 # handlers file for babu.tomcat
 - name: restart tomcat
-  command: sudo nohup /usr/local/tomcat/apache-tomcat-8.5.33/bin/startup.sh &
+  command: nohup /usr/local/tomcat/apache-tomcat-8.5.33/bin/startup.sh &
