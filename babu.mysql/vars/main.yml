@@ -4,4 +4,4 @@
  db_user_name: root
  db_user_pass: password123
  db_name: tourguide
- db_host: 35.153.38.237
+ db_host: 192.168.56.11
