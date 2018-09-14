@@ -19,7 +19,7 @@
 #- name: copy the war file
 #  copy: src="{{job}}" dest=/usr/local/tomcat/apache-tomcat-8.5.33/webapps mode=0755 owner=root force=yes
 - name: download war file from nexus repository
-  get_url: url=http://192.168.56.10:8081/nexus/content/repositories/tourguide/TourGuide/TourGuide/1.5.1/TourGuide-1.5.1.war dest=/tmp mode=0755
+  get_url: url=http://192.168.56.10:8081/nexus/content/repositories/tourguide/TourGuide/TourGuide/1.5.1/TourGuide-1.5.1.war dest=/tmp
 - name: copy the war file
   copy: src="/tmp/TourGuide-1.5.1.war" dest=/usr/local/tomcat/apache-tomcat-8.5.34/webapps mode=0755 owner=root force=yes
   notify: restart tomcat
